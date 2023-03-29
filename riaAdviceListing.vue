@@ -11,29 +11,29 @@
     <div class="ria-advice-listing-widgets-wrapper">
       <div class="widgets-first-row-wrapper">
         <div class="widgets-common-wrapper" style="margin-right: 15px">
-          <div>Total Sales</div>
+          <div>Straddle</div>
           <areaChart />
         </div>
         <div class="widgets-common-wrapper" style="margin-right: 15px">
-          <div>Visits</div>
+          <div>Strangle</div>
           <areaChart />
         </div>
         <div class="widgets-common-wrapper">
-          <div>Payments</div>
+          <div>Gap Strategies</div>
           <columnChart />
         </div>
       </div>
       <div class="widgets-first-row-wrapper">
         <div class="widgets-common-wrapper" style="margin-right: 15px">
-          <div>Visits</div>
+          <div>Bull Call Spread</div>
           <areaChart />
         </div>
         <div class="widgets-common-wrapper" style="margin-right: 15px">
-          <div>Payments</div>
+          <div>Bear Put Spread</div>
           <columnChart />
         </div>
         <div class="widgets-common-wrapper">
-          <div>Operational Effect</div>
+          <div>Protective Collar</div>
           <areaChart />
         </div>
       </div>
@@ -49,9 +49,9 @@
         <a-tab-pane key="3" tab="Closed Advices">
            <closedOrderTab />
         </a-tab-pane>
-        <a-tab-pane key="4" tab="History">
+        <!-- <a-tab-pane key="4" tab="History">
            <historyTab />
-        </a-tab-pane>
+        </a-tab-pane> -->
       </a-tabs>
     </div>
   </div>
@@ -66,7 +66,7 @@ import columnChart from '../../common/components/columnChart.vue';
 import adviceTab from './riaAdviceTab.vue';
 import ordersTab from './riaAdviceOrderTab.vue';
 import closedOrderTab from './riaAdviceClosedOrderTab.vue';
-import historyTab from './riaAdviceHistoryTab.vue';
+// import historyTab from './riaAdviceHistoryTab.vue';
 // import { useStore } from 'vuex';
 // import services from '../../../services/apis';
 export default {
@@ -76,7 +76,7 @@ export default {
     adviceTab,
     ordersTab,
     closedOrderTab,
-    historyTab,
+    // historyTab,
   },
 
   setup() {

@@ -46,11 +46,11 @@
         <div>
           <a-table
             :columns='clientListingColumnData'
-            :data-source='clientData'
+            :data-source='clientDataDemo'
             :row-selection='rowSelection'
             :pagination='false'
             :locale="locale"
-            :rowKey="(record) => record.id"
+            :rowKey="(record) => record.key"
           >
             <template #moreOptions>
               <more-outlined
@@ -136,6 +136,47 @@ export default {
       Object.assign(staticData, emptyArray);
       Object.assign(clientData, emptyArray.slice(0, 10));
     };
+    const clientDataDemo = [{
+      key: '1',
+      creatingDate: '1st December',
+      clientName: 'Brown',
+      lorem: '5',
+      loremIpsum: 'QuestTrade',
+      ipsum: 'Fredericton',
+      dolarSit: ['nice', 'developer'],
+      ipsum1: '123',
+      amet: 'fff',
+    }, {
+      key: '2',
+      creatingDate: '21st September',
+      clientName: 'Aron',
+      lorem: '11',
+      loremIpsum: 'TD Direct Investing',
+      ipsum: 'Moncton',
+      dolarSit: ['nice', 'developer'],
+      ipsum1: '123',
+      amet: 'fff',
+    }, {
+      key: '3',
+      creatingDate: '2nd June',
+      clientName: 'Adrian',
+      lorem: '2',
+      loremIpsum: 'CIBC',
+      ipsum: 'Oromocto',
+      dolarSit: ['nice', 'developer'],
+      ipsum1: '123',
+      amet: 'fff',
+    }, {
+      key: '4',
+      creatingDate: '5th Febrauary',
+      clientName: 'Albert',
+      lorem: '7',
+      loremIpsum: 'WealthSimple',
+      ipsum: 'Saint John',
+      dolarSit: ['nice', 'developer'],
+      ipsum1: '123',
+      amet: 'fff',
+    }];
     const onClickViewMore = () => {
       Object.assign(clientData, staticData);
       showViewMore.value = false;
@@ -164,32 +205,32 @@ export default {
         key: 'clientName',
       },
       {
-        title: 'Lorem',
+        title: '# Open Trades',
         dataIndex: 'lorem',
         key: 'lorem',
       },
       {
-        title: 'Lorem Ipsum',
+        title: 'Broker',
         key: 'loremIpsum',
         dataIndex: 'loremIpsum',
       },
       {
-        title: 'Ipsum',
+        title: 'Address',
         key: 'ipsum',
         dataIndex: 'ipsum',
       },
       {
-        title: 'Dolor Sit',
+        title: 'Total Capital',
         key: 'dolarSit',
         dataIndex: 'dolarSit',
       },
       {
-        title: 'Ipsum',
+        title: 'Available Capital',
         key: 'ipsum1',
         dataIndex: 'ipsum1',
       },
       {
-        title: 'Amet',
+        title: 'Risk%',
         key: 'amet',
         dataIndex: 'amet',
       },
@@ -217,6 +258,7 @@ export default {
       rowSelection,
       locale,
       clientData,
+      clientDataDemo,
       staticData,
       onClickViewMore,
       showViewMore,

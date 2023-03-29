@@ -43,23 +43,23 @@
     </div>
     <div class='status-indicator-details'>
       <div class='Lorem-ipsum-color-code'></div>
-      <div class='Lorem-ipsum-margin-text'>Lorem ipsum</div>
+      <div class='Lorem-ipsum-margin-text'>Profit</div>
       <div class='Dolorn-sit-color-code'></div>
-      <div class='Dolorn-sit-margin-text'>Dolorn sit</div>
+      <div class='Dolorn-sit-margin-text'>No Profit/No Loss</div>
       <div class='Phasellus-color-code'></div>
-      <div class='Phasellus-margin-text'>Phasellus et</div>
-      <div class='Nullam-odio-color-code'></div>
-      <div class='Nullam-odio-margin-text'>Nullam odio</div>
+      <div class='Phasellus-margin-text'>Loss</div>
+      <!-- <div class='Nullam-odio-color-code'></div>
+      <div class='Nullam-odio-margin-text'>Nullam odio</div> -->
     </div>
     <div class='ria-advice-tab-table-wrapper'>
       <div>
         <a-table
-          :columns='adviceColumnData'
-          :data-source='adviceListData'
+          :columns='columns'
+          :data-source='adviceDataDemo'
           :row-selection='rowSelection'
           :pagination='false'
           @expand= 'expandAdviceRow'
-          :rowKey="(record,index) => record.adviceId"
+          :rowKey="(record,index) => record.key"
         >
         <template #adviceId="{ text }">
               <span @click='onClickAdviceId(text)' style='cursor: pointer'
@@ -233,6 +233,104 @@ export default {
       Object.assign(adviceListData, staticData);
       showViewMore.value = false;
     };
+    const adviceDataDemo = [{
+      key: '1',
+      aging: '1st June 2019',
+      entryPrice: '51.5',
+      currentPrice: '59',
+      mtm: 'NVIDIA',
+      upDown: '+11%',
+      title: '10',
+      title1: '515',
+      title2: '+75',
+      title3: 'Equity',
+    }, {
+      key: '2',
+      aging: '21st July 2020',
+      entryPrice: '10',
+      currentPrice: '12',
+      mtm: 'Amazon',
+      upDown: '+20%',
+      title: '20',
+      title1: '200',
+      title2: '+40',
+      title3: 'Equity',
+    }, {
+      key: '3',
+      aging: '5th March 2021',
+      entryPrice: '5',
+      currentPrice: '7',
+      mtm: 'Microsoft',
+      upDown: '+8%',
+      title: '5',
+      title1: '25',
+      title2: '+10',
+      title3: 'Equity',
+    }, {
+      key: '4',
+      aging: '1st December 2021',
+      entryPrice: '25',
+      currentPrice: '30',
+      mtm: 'Apple',
+      upDown: '+20%',
+      title: '10',
+      title1: '250',
+      title2: '+50',
+      title3: 'Equity',
+    }];
+    const columns = ref([
+      {
+        title: 'Aging',
+        dataIndex: 'aging',
+        key: 'aging',
+      },
+      {
+        title: 'Entry Price',
+        dataIndex: 'entryPrice',
+        key: 'entryPrice',
+      },
+      {
+        title: 'Current Price',
+        dataIndex: 'currentPrice',
+        key: 'currentPrice',
+      },
+      {
+        title: 'Company',
+        dataIndex: 'mtm',
+        key: 'mtm',
+      },
+      {
+        title: '%Up/Down',
+        dataIndex: 'upDown',
+        key: 'upDown',
+      },
+      {
+        title: '# Shares',
+        dataIndex: 'title',
+        key: 'title',
+      },
+      {
+        title: 'Invested Amount',
+        dataIndex: 'title1',
+        key: 'title1',
+      },
+      {
+        title: 'Profit/Loss',
+        dataIndex: 'title2',
+        key: 'title2',
+      },
+      {
+        title: 'Instrument Type',
+        dataIndex: 'title3',
+        key: 'title3',
+      },
+      {
+        title: ' ',
+        dataIndex: 'moreInfo',
+        key: 'moreInfo',
+        slots: { customRender: 'moreOptions' },
+      },
+    ]);
     const fetchTransactionsUnderAnAdvice = async (adviceId) => {
       const emptyArray = [];
       // console.log(adviceHeader.value);
@@ -493,6 +591,8 @@ export default {
       onClickViewMore,
       showViewMore,
       // hide,
+      columns,
+      adviceDataDemo,
     };
   },
 };

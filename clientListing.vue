@@ -3,13 +3,8 @@
     <h3 class="client-listing-title">Client Listing</h3>
     <div class="text-section">
       <p class="listing-description">
-        Nullam dictum ligula gravida mauris ullamcorper, id co a nvallis turpis
-        gra vida. Nunc solli citudin elit in lacus egestas, eget auctor ante
-        inte rdum. Ut risus rhoncus conse ctetur. Suspe ndisse lorem tortor,
-        mole stie non libero eget, eleifend cursus magna. Vestibu lum luctus
-        gravida libero et male Morbi vestibu lum orci in luctus imperdiet. Nam
-        egestas arcu nec scele risque molestie. Curabitur ut mollis tellus,
-        sagittis pellentesque lacus.
+        Client Details divided into groups and individual clients.
+        This page give a brief of client's current holdings and invested amount status looks like.
       </p>
     </div>
     <div class="listing-tabs">

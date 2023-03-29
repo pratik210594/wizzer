@@ -97,10 +97,10 @@
         <div>
           <a-table
             :columns="fundRequestColumnData"
-            :data-source="fundListData"
+            :data-source="fundRequestData"
             :row-selection="rowSelection"
             :pagination="false"
-            :rowKey="(record) => record.FRId"
+            :rowKey="(record) => record.key"
              @expand="setFundRequestHeader"
           >
             <template #moreOptions>
@@ -116,7 +116,7 @@
               <span>{{ text.date }}</span>
             </template>
             <template #fundRequestStatusIndicator ="{ text }">
-              <!-- <div class="table-color-code"></div> -->
+              <div class="backoffice-color-code"></div>
               <div v-if="text.status == 'BO MARGIN UPDATED'"
                     class="backoffice-color-code"></div>
                     <div v-if="text.status== 'EXCHANGE MARGIN UPDATED'"
@@ -190,10 +190,10 @@
                 </div>
                 <a-table
                   :columns="fundRequestInnerColumnData"
-                  :data-source="clientListFundData"
+                  :data-source="fundListDataDemo"
                   :row-selection="innerTableRowSelection"
                   :pagination="false"
-                  :rowKey="(record) => record.clientName.id"
+                  :rowKey="(record) => record.key"
                 >
                   <template #moreOptions>
                     <more-outlined
@@ -207,7 +207,8 @@
                   <template #clientName="{ text }">
                     <span>{{ text.clientName }}</span>
                   </template>
-                  <template #statusIndicator="{ text }">
+                  <template #innerStatus="{ text }">
+                    <div class="completed-color-code-data"></div>
                     <div v-if="text.status== 'COMPLETED'" class="completed-color-code-data"></div>
                     <div v-if="text.status== 'PARTIALLY_COMPLETED'"
                     class="partially-completed-color-code-data">
@@ -335,6 +336,60 @@ export default {
         .catch(() => {});
       Object.assign(clientListFundData, emptyArray);
     };
+    const fundRequestData = [{
+      key: '1',
+      date: '21st July 2019',
+      FRId: 'A121',
+      amount: '5000',
+      description: 'For setting up new asset',
+      status: '+11%',
+    }, {
+      key: '2',
+      date: '12th May 2020',
+      FRId: 'B875',
+      amount: '7000',
+      description: 'For setting up new asset',
+      status: '+11%',
+    }, {
+      key: '3',
+      date: '20th April 2020',
+      FRId: 'C999',
+      amount: '15000',
+      description: 'For setting up new asset',
+      status: '+11%',
+    }, {
+      key: '4',
+      date: '15th June 2021',
+      FRId: 'D432',
+      amount: '3000',
+      description: 'For setting up new asset',
+      status: '+11%',
+    },
+    {
+      key: '5',
+      date: '10th September 2021',
+      FRId: 'D500',
+      amount: '6500',
+      description: 'For setting up new asset',
+      status: '+11%',
+    },
+    {
+      key: '6',
+      date: '30th October 2021',
+      FRId: 'E321',
+      amount: '9000',
+      description: 'For setting up new asset',
+      status: '+11%',
+    },
+    {
+      key: '7',
+      date: '22nd November 2022',
+      FRId: 'J987',
+      amount: '5500',
+      description: 'For setting up new asset',
+      status: '+11%',
+    },
+    ];
     onMounted(() => {
       window.scrollTo(0, 0);
       fundsListing();
@@ -349,7 +404,7 @@ export default {
         title: 'Date',
         dataIndex: 'date',
         key: 'date',
-        slots: { customRender: 'date' },
+        // slots: { customRender: 'date' },
       },
       {
         title: 'FR#',
@@ -384,7 +439,6 @@ export default {
         title: 'Client Name',
         dataIndex: 'clientName',
         key: 'clientName',
-        slots: { customRender: 'clientName' },
       },
       {
         title: 'FR#',
@@ -392,84 +446,58 @@ export default {
         key: 'FRId',
       },
       {
-        title: 'Lorem',
-        dataIndex: 'lorem',
-        key: 'lorem',
-      },
-      {
-        title: 'Lorem Ipsum',
-        dataIndex: 'loremIpsum',
-        key: 'loremIpsum',
-      },
-      {
-        title: 'Ipsum',
-        dataIndex: 'ipsum',
-        key: 'ipsum',
-      },
-      {
-        title: 'Dolor Sit',
-        dataIndex: 'dolarSit',
-        key: 'dolarSit',
-      },
-      {
-        title: 'Ipsum',
-        dataIndex: 'ipsum',
-        key: 'ipsum',
-      },
-      {
-        title: 'Amet',
-        dataIndex: 'amet',
-        key: 'amet',
-      },
-      {
-        title: 'Amet',
-        dataIndex: 'amet1',
-        key: 'amet',
-      },
-      {
         title: 'Status',
         dataIndex: 'status',
         key: 'status',
-        slots: { customRender: 'statusIndicator' },
-      },
-      {
-        title: '',
-        dataIndex: 'moreOptions',
-        key: 'moreOptions',
-        slots: { customRender: 'moreOptions' },
+        slots: { customRender: 'innerStatus' },
       },
     ];
-
+    const fundListDataDemo = [
+      {
+        key: '1',
+        clientName: 'Adrian',
+        FRId: 'A87854',
+        status: 'aaa',
+      },
+      {
+        key: '2',
+        clientName: 'Matt',
+        FRId: 'M752215',
+        status: 'aaa',
+      },
+      {
+        key: '3',
+        clientName: 'Cindy',
+        FRId: 'C763115',
+        status: 'aaa',
+      },
+      {
+        key: '4',
+        clientName: 'Allen',
+        FRId: 'A22222',
+        status: 'aaa',
+      },
+      {
+        key: '5',
+        clientName: 'Zack',
+        FRId: 'Z111258',
+        status: 'aaa',
+      },
+      {
+        key: '6',
+        clientName: 'Ross',
+        FRId: 'R236890',
+        status: 'aaa',
+      },
+      {
+        key: '7',
+        clientName: 'Melissa',
+        FRId: 'M102938',
+        status: 'aaa',
+      },
+    ];
     const childTableBulkAction = ref(undefined);
     const parentTableBulkAction = ref(undefined);
-    const parentTableOptions = ref([
-      {
-        value: 'jack',
-        label: 'Jack',
-      },
-      {
-        value: 'lucy',
-        label: 'Lucy',
-      },
-      {
-        value: 'tom',
-        label: 'Tom',
-      },
-    ]);
-    const childTableOptions = ref([
-      {
-        value: 'jack',
-        label: 'Jack',
-      },
-      {
-        value: 'lucy',
-        label: 'Lucy',
-      },
-      {
-        value: 'tom',
-        label: 'Tom',
-      },
-    ]);
     const rowSelection = {
       onChange: (selectedRowKeys, selectedRows) => {
         console.log(
@@ -510,11 +538,10 @@ export default {
       innerTableRowSelection,
       childTableBulkAction,
       parentTableBulkAction,
-      childTableOptions,
-      parentTableOptions,
       fundRequestInnerColumnData,
       onClickFundRequest,
       fundListData,
+      fundListDataDemo,
       clientListFundData,
       clientsLinkedToFundRequest,
       fundRequestNumber,
@@ -522,6 +549,7 @@ export default {
       staticData,
       onClickViewMore,
       showViewMore,
+      fundRequestData,
     };
   },
 };
