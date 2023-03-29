@@ -1,0 +1,27 @@
+.left-navigation-main-wrapper {
+  height: 100%;
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #6A3C87;
+  }
+
+  .ant-menu-inline .ant-menu-item::after {
+    border-right: none;
+  }
+
+  .ant-menu-item {
+    margin-top: 5px !important;
+    height: 56px !important;
+  }
+
+  .nav-text {
+    margin: 10px 0px !important;
+    padding-left: 16px !important;
+    padding-top: 5px !important;
+  }
+
+  .left-navigation-menu-items-icon {
+    font-size: 25px;
+    // color: #969696;
+    cursor: pointer;
+  }
+}

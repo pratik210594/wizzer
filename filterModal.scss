@@ -1,0 +1,68 @@
+.main-container {
+  .ant-btn {
+    color: rgb(238, 176, 161);
+  }
+}
+.candidate-filter-header-text {
+  padding-bottom: 1rem;
+  display: block;
+  flex-direction: row;
+  //justify-content: space-between;
+  font-size: font_size_10;
+  color: rgb(131, 135, 138);
+  font-weight: bold;
+  font-family: "Poppins";
+}
+
+.child-tag-section {
+  //background: #f8f8f8;
+  display: block;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem 0.5rem;
+  border-bottom: 1px solid #E0E0E0;;
+  border-top: 1px solid #E0E0E0;;
+}
+.title-tag {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #4c5155;
+}
+.check-tag {
+  //background: #e3e3e3;
+  border-radius: 11px;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 22px;
+  width: 100px;
+  height: 22px;
+  //color: #000000;
+  border: 0.5px solid #828282;
+  text-align: center;
+}
+.ant-tag.ant-tag-checkable.ant-tag-checkable-checked.check-tag {
+  //background: #4f4cff;
+  border-radius: 13px;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.ant-modal-body {
+  padding: 0.75rem 0.75rem 0.5rem;
+}
+.ant-modal-footer {
+  border-top: 0;
+}
+.footer {
+  margin-top: 1rem;
+  float: right;
+}

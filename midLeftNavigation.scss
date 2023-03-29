@@ -1,0 +1,70 @@
+.mid-left-main-wrapper{
+  height:100%;
+  background-color: white;
+  
+.logo-with-name-main-wrapper {
+  padding: 20px 0px  10px 13px ;
+  align-items: center;
+  display: flex;
+  .icon-text{
+    color: #FFFFFF; 
+    background-color:#6A3C87;
+    font-family: 'Pangram Regular';
+    margin-right: 5px;
+  }
+}
+
+.logo-text {
+  font-family: 'Pangram Medium';
+font-size: 14px;
+color: #505050;
+}
+.mid-navigation-profile-additional-text{
+  font-family: 'Pangram Light';
+font-size: 12px;
+color: #969696;
+
+}
+.nav-panel-details-text{
+  font-family: 'Pangram Medium';
+  font-size: 14px;
+color: #505050;
+padding: 15px 0px 25px 10px;
+}
+  .midLeft-navigation-main-wrapper{
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+      background-color: #FBFBFB;
+    }
+    .ant-menu-inline .ant-menu-item::after {
+      border-right: none;
+    }
+  
+    .ant-menu-item {
+      margin-top: 5px !important;
+      height: 34px !important;
+      color: #505050;
+      font-family: 'Pangram Regular';
+      font-size: 12px;
+      padding: 0px !important;
+      padding-left: 10px !important;
+    }
+    .ant-menu-item-selected {
+      color: #6A3C87;
+      font-family: 'Pangram ExtraBold';
+      font-size: 12px;
+  }
+//   .ant-menu-item{
+//     font-family: 'Pangram Regular';
+// font-size: 12px;
+// color: #505050;
+//   }
+    .nav-text {
+      margin: 0px !important;
+    }
+    .mid-nav-sub-menu-item{
+      display: flex;
+      align-items: center;
+      margin: 0px !important;
+    }
+  }
+}

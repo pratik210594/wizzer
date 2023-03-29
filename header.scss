@@ -1,0 +1,30 @@
+.common-header-root {
+  display: flex;
+  margin-top: 1rem;
+  .common-header-text{
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: left;
+  }
+  .common-header-root-buttons-root {
+    margin-left: auto;
+    .common-header-btn-links {
+      color: $black;
+      font-size: 16px;
+    }
+    .signup-button{
+      color: $white;
+      font-size: 16px;
+      margin: 0 1rem;
+      line-height: 1;
+    }
+    .login-button{
+      color: RGB(25, 144, 255);
+      font-size: 16px;
+      margin: 0 1rem;
+      line-height: 1;
+    }
+  }
+}
